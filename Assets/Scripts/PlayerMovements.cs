@@ -3,7 +3,29 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     public float speed = 5f; // Geschwindigkeit der Spielfigur, anpassbar im Unity-Editor
-    public float rotationSpeed = 200f; // Geschwindigkeit der Drehung, anpassbar im Unity-Editor
+   [SerializeField]
+    public float rotationSpeed = 100f; // Geschwindigkeit der Drehung, anpassbar im Unity-Editor
+    public float drag = 0f; // Luftwiderstand, anpassbar im Unity-Editor
+    public float angularDrag = 3f; // Widerstand gegen Drehbewegung, anpassbar im Unity-Editor
+    private Rigidbody rb; // Referenz zur Rigidbody-Komponente
+
+    void Start()
+    {
+        // Rigidbody-Komponente beim Start des Spiels abrufen
+        rb = GetComponent<Rigidbody>();
+
+        // Rotation in den X- und Z-Achsen einfrieren
+        rb.constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationZ;
+
+        // Luftwiderstand einstellen
+        rb.drag = drag;
+
+        // Widerstand gegen Drehbewegung einstellen
+        rb.angularDrag = angularDrag;
+
+        // Kollisionsdetektionsmodus auf kontinuierlich setzen
+        rb.collisionDetectionMode = CollisionDetectionMode.Continuous;
+    }
 
     // Update wird einmal pro Frame aufgerufen
     void Update()
