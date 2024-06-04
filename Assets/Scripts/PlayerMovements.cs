@@ -2,8 +2,8 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    // Geschwindigkeit der Spielfigur, anpassbar im Unity-Editor
-    public float speed = 5f;
+    public float speed = 5f; // Geschwindigkeit der Spielfigur, anpassbar im Unity-Editor
+    public float rotationSpeed = 200f; // Geschwindigkeit der Drehung, anpassbar im Unity-Editor
 
     // Update wird einmal pro Frame aufgerufen
     void Update()
@@ -23,16 +23,16 @@ public class PlayerMovement : MonoBehaviour
             direction += Vector3.back;
         }
 
-        // Überprüfen, ob die A-Taste gedrückt wird, um die Spielfigur nach links zu bewegen
+        // Überprüfen, ob die A-Taste gedrückt wird, um die Spielfigur zu drehen
         if (Input.GetKey(KeyCode.A))
         {
-            direction += Vector3.left;
+            transform.Rotate(0, -rotationSpeed * Time.deltaTime, 0);
         }
 
-        // Überprüfen, ob die D-Taste gedrückt wird, um die Spielfigur nach rechts zu bewegen
+        // Überprüfen, ob die D-Taste gedrückt wird, um die Spielfigur zu drehen
         if (Input.GetKey(KeyCode.D))
         {
-            direction += Vector3.right;
+            transform.Rotate(0, rotationSpeed * Time.deltaTime, 0);
         }
 
         // Normalisieren der Richtung, um gleichmäßige Geschwindigkeit in alle Richtungen zu gewährleisten
