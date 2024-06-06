@@ -5,8 +5,8 @@ using UnityEngine.AI;
 
 public class WalkingPedestrian : MonoBehaviour
 {
-    public float moveRadius = 30f;
-    public float interval = 15f; // 
+    public float moveRadius = 10f;
+    public float interval = 4f; // 
     private NavMeshAgent agent;
     private float timer;
 
