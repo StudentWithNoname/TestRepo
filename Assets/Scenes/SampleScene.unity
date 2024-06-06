@@ -18761,6 +18761,9 @@ GameObject:
 =======
   - component: {fileID: 1542381594}
   - component: {fileID: 1542381595}
+<<<<<<< HEAD
+>>>>>>> pedestrians
+=======
 >>>>>>> pedestrians
   m_Layer: 0
   m_Name: Player
@@ -18911,10 +18914,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 5
 <<<<<<< HEAD
+<<<<<<< HEAD
   rotationSpeed: 100
   drag: 0
   angularDrag: 3
 =======
+=======
+>>>>>>> pedestrians
   rotationSpeed: 200
 --- !u!54 &1542381595
 Rigidbody:
@@ -19007,6 +19013,9 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 1740304333}
   m_SourcePrefab: {fileID: 100100000, guid: 87a7b985b15a4244091de35d7df9169a, type: 3}
+<<<<<<< HEAD
+>>>>>>> pedestrians
+=======
 >>>>>>> pedestrians
 --- !u!1001 &1555163927
 PrefabInstance:
